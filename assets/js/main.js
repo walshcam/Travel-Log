@@ -18,16 +18,16 @@ let userFlightQuery = {
     destination: "LAX",
     departureDate: "2018-06-25",
     returnDate: "2018-07-15",
-    durationStart: "5",
-    durationEnd: "7",
+    durationStart: 5,
+    durationEnd: 7,
     maxPrice: "2000",
     currency: "USD",
-    adults: "1",
-    children: "2",
-    infants: "1",
-    nonstop: "true",
+    adults: 1,
+    children: 2,
+    infants: 1,
+    nonstop: true,
     travelClass: "ECONOMY",
-    numberOfResults: "5",
+    numberOfResults: 5,
 
     //function to create a request URL for the Amadeus API
     flightQuery: function() {
@@ -51,6 +51,71 @@ let userFlightQuery = {
             method: "GET"
         }).then(function(response) {
             console.log(response);
+
+            for (let i = 0; i < response.results.length; i++) {
+                //Return Price of Trip
+                let tripAirPrice = response.results[0].fare.total_price;
+                console.log(`The Price Of The Ticket is ${tripAirPrice}`);
+
+                //Number of Layovers for Outbound Flight
+                let outboundFlightTotal = response.results[i].itineraries["0"].outbound.flights.length - 1;
+                console.log(`The number of layovers for the outbound flight is: ${outboundFlightTotal}`);
+
+                //Number of Layovers for Inbound Flight
+                let inboundFlightTotal = response.results[i].itineraries["0"].inbound.flights.length - 1;
+                console.log(`The number of layovers for the inbound flight is: ${inboundFlightTotal}`);
+
+                // //Calculate Length of Time Traveling for Outbound Flights
+                // let startTime = response.results[i].itineraries[0].outbound.flights[0].departs_at;
+                // let endTime = response.results[i].itineraries[0].outbound.flights[outboundFlightTotal].arrives_at;
+                // console.log(endTime);
+                // let travelTime = moment(endTime).subtract(moment(startTime)).format("HH:mm");
+                // console.log(`Total time outbound traveling is: ${travelTime}`)
+                
+
+                //OUTBOUND FOR LOOP <-THIS GIVES ARRIVAL TIMES AND DATES FOR EACH FLIGHT
+                    //The for loop is in case of layovers
+                for (let j = 0; j < response.results[i].itineraries["0"].outbound.flights.length; j++) {
+                    
+                    //Departure Time / Date
+                    let departureRaw = response.results[i].itineraries["0"].outbound.flights[j].departs_at;
+                    let departureTime = departureRaw.substring(11,16);
+                    let departureDate = departureRaw.substring(0,10);
+                    let flightNumber = j+1;
+                    console.log(`The departure time for the outgoing flight ${flightNumber} is: ${departureTime}`);
+                    console.log(`The departure date for the outgoing flight ${flightNumber} is: ${departureDate}`);
+                
+                    //Arrival Time / Date
+                    let arrivalRaw = response.results[i].itineraries["0"].outbound.flights[j].arrives_at;
+                    let arrivalTime = arrivalRaw.substring(11,16);
+                    let arrivalDate = arrivalRaw.substring(0,10);
+                    console.log(`The arrival time for the outgoing flight ${flightNumber} is: ${arrivalTime}`);
+                    console.log(`The arrival date for the outgoing flight ${flightNumber} is: ${arrivalDate}`);
+                }
+
+                //INBOUND FOR LOOP <-THIS GIVES ARRIVAL TIMES AND DATES FOR EACH FLIGHT
+                //The for loop is in case of layovers
+                for (let j = 0; j < response.results[i].itineraries["0"].inbound.flights.length; j++) {
+                
+                    //Departure Time / Date
+                    let departureRaw = response.results[i].itineraries["0"].inbound.flights[j].departs_at;
+                    let departureTime = departureRaw.substring(11,16);
+                    let departureDate = departureRaw.substring(0,10);
+                    let flightNumber = j+1;
+                    console.log(`The departure time for the outgoing flight ${flightNumber} is: ${departureTime}`);
+                    console.log(`The departure date for the outgoing flight ${flightNumber} is: ${departureDate}`);
+                
+                    //Arrival Time / Date
+                    let arrivalRaw = response.results[i].itineraries["0"].inbound.flights[j].arrives_at;
+                    let arrivalTime = arrivalRaw.substring(11,16);
+                    let arrivalDate = arrivalRaw.substring(0,10);
+                    console.log(`The arrival time for the outgoing flight ${flightNumber} is: ${arrivalTime}`);
+                    console.log(`The arrival date for the outgoing flight ${flightNumber} is: ${arrivalDate}`);
+                }
+
+            }
+
+
         });
     }
 };
