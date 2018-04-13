@@ -65,14 +65,6 @@ let userFlightQuery = {
                 let inboundFlightTotal = response.results[i].itineraries["0"].inbound.flights.length - 1;
                 console.log(`The number of layovers for the inbound flight is: ${inboundFlightTotal}`);
 
-                // //Calculate Length of Time Traveling for Outbound Flights
-                // let startTime = response.results[i].itineraries[0].outbound.flights[0].departs_at;
-                // let endTime = response.results[i].itineraries[0].outbound.flights[outboundFlightTotal].arrives_at;
-                // console.log(endTime);
-                // let travelTime = moment(endTime).subtract(moment(startTime)).format("HH:mm");
-                // console.log(`Total time outbound traveling is: ${travelTime}`)
-                
-
                 //OUTBOUND FOR LOOP <-THIS GIVES ARRIVAL TIMES AND DATES FOR EACH FLIGHT
                     //The for loop is in case of layovers
                 for (let j = 0; j < response.results[i].itineraries["0"].outbound.flights.length; j++) {
