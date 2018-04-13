@@ -23,8 +23,8 @@ let userFlightQuery = {
     maxPrice: "2000",
     currency: "USD",
     adults: 1,
-    children: 2,
-    infants: 1,
+    children: 0,
+    infants: 0,
     nonstop: true,
     travelClass: "ECONOMY",
     numberOfResults: 5,
@@ -117,7 +117,7 @@ let userFlightQuery = {
 
 
         }).catch(function(err) {
-            console.log(`There was an error processing the request. Desired price may be too low.`)
+            console.log(`There was an error processing the request. Desired price may be too low, the amount of people selected may be zero, or an input may be invalid`)
         });
     }
 };
