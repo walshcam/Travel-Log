@@ -116,6 +116,8 @@ let userFlightQuery = {
             }
 
 
+        }).catch(function(err) {
+            console.log(`There was an error processing the request. Desired price may be too low.`)
         });
     }
 };
