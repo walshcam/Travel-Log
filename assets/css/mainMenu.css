@@ -1,0 +1,48 @@
+body {
+    background-color: #777;
+}
+
+card {
+    background-color: white;
+}
+
+/* font-family */
+
+body {
+    font-family: 'Amaranth', sans-serif;
+}
+
+body {
+    /* font-family: 'Lato', sans-serif; */
+    background-color: rgb(253, 72, 72);
+}
+
+/* card styles  */
+
+.card {
+    margin-top: 1em;
+}
+
+.card-header {
+    text-align: center;
+}
+
+.svg-inline--fa.fa-w-18 {
+    width: 2.125em;
+    float: right;
+    display: inline;
+    margin-top: .30rem;
+}
+
+h4 {
+    display: inline;
+}
+
+h1 {
+    font-size: 2em;
+    padding-top: .4em;
+}
+
+#future-submit {
+    margin-top: 1em;
+}
