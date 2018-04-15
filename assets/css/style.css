@@ -1,13 +1,25 @@
 /* font-family */
 
 .button,
-.form-lable {
+.form-lable,
+.formInput {
     font-family: 'Amaranth', sans-serif;
+    color: #48dffd;
 }
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: rgb(253, 72, 72);
+    background: linear-gradient(#fd6648,#fe907a);
+}
+
+.container {
+    margin: 2% 1% 5%;
+}
+
+/* form textbox style */
+.formInput {
+    background: rgba(0,0,0,0.2); 
+    text-align: center;
 }
 
 /* login or sign up button style */
@@ -17,10 +29,19 @@ body {
     padding: 7% 0;
     margin-top: 1em;
     font-size: 1.5rem;
+    color: #48dffd;
+    border-radius: 5rem;
+    border: 0.2em solid #48dffd;
+    background: rgba(0, 0, 0, 0)
 }
 
 .button:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.button:active {
+    background: rgba(0, 0, 0, 0.19);
 }
 
 /* form styles */
@@ -60,15 +81,47 @@ header img {
 
 @media only screen and (min-width: 600px) {
     body {
-        width: 100%;
-        margin: auto;
         padding: auto;
-        background-color: blue;
+        background: url(../images/architecture-bay-blonde-196667.jpg);
+        background-size: 1100px;
+        background-repeat: no-repeat;
+        position: relative;
     }
+
     .container {
         display: inline-block;
         height: 65%;
-        width: 60%;
-        margin-top: 20%;
+        width: 600px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%)
     }
+
+    .form-lable,
+    .formInput {
+    color: black;
+    }
+
+    .button {
+        color: white;
+        border: 0.2em solid white;
+    }
+
+    header {
+        float: right;
+        width: 50%;
+    }
+
+    form {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    body {
+        background-size: 100%;
+    }
+
 }
