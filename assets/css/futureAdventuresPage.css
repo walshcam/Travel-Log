@@ -146,7 +146,7 @@ li {
     font-size: 20px;
 }
 
-#price {
+.price {
     font-weight: inherit;
     color: white;
     padding-left: 2%;
