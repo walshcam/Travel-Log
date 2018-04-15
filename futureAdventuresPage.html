@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Future Adventure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- reset css file link -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <!-- link to font-awesome -->
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Lato" rel="stylesheet">
+    <!-- bootsrap CDN link -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous"> -->
+    <!-- css file link -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/futureAdventuresPage.css" />
+</head>
+
+
+<body>
+
+    <!-- Overall container of the body -->
+    <div class = "container">
+        
+        <!-- ********AIRLINE INFO ROW******** -->
+        <div class = "row">
+
+            <!-- Roundtrip / Oneway Button -->
+            <div class = "airlineButton">
+
+                <div class = "blueSelector" id = "roundTripSelector">
+
+                </div>
+                
+                <ul class = "buttonElement">
+
+                    <li class = "leftButton" id = "roundTrip">
+                        Roundtrip
+                    </li>
+                    <li class = "rightButton" id = "oneWay">
+                        OneWay
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- NonStop / Layovers -->
+            <div class = "airlineButton">
+                
+                <ul class = "buttonElement">
+
+                    <li class = "leftButton" id = "nonStop">
+                        NonStop
+                    </li>
+                    <li class = "rightButton" id = "layovers">
+                        Layovers
+                    </li>
+
+                </ul>
+                
+                <div class = "blueSelector" id = "nonStopSelector">
+
+                </div>
+
+            </div>
+
+            <!-- Flying From Info Request -->
+            <div class = "airlineTextboxLarge">
+
+                <h2>Flying From:</h2>
+                <input type = "text" class = "textboxLarge" id = "origin" placeholder = "BOS" required>
+
+            </div>
+
+            <!-- Flying To Info Request -->
+            <div class = "airlineTextboxLarge">
+
+                <h2>Flying To:</h2>
+                <input type = "text" class = "textboxLarge" id = "destination" placeholder = "LAX" required>
+
+            </div>
+
+            <div class = "bottomInput">
+
+                <!-- Outbound Date Input -->
+                <div class = "innerDateInput clearfix">
+
+                
+                    <div class = "dateInput">
+
+                        <h2>Depart Date:</h2>
+                        <input type = "text" class = "input" id = "departDate" placeholder = "YYYY-MM-DD" required>
+
+                    </div>
+
+                </div>
+                <!-- Inbound Date Input -->
+                <div class = "innerDateInput" id = "hideReturnDate">
+
+                    <div class = "dateInput">
+
+                        <h2>Return Date:</h2>
+                        <input type = "text" class = "input" id = "returnDate" placeholder = "YYYY-MM-DD">
+
+                    </div>
+
+                </div>
+            
+            </div>
+
+            <div class = "bottomInput clearfix">
+
+                <!-- Adults Amount -->
+                <div class = "personsAmountInput">
+
+                    <h2>Adults:</h2>
+                    <input type = "number" value = "1" min = "0" class = "input" id = "adults" required>
+
+                </div>
+                <!-- Children Amount -->
+                <div class = "personsAmountInput">
+
+                    <h2>Children:</h2>
+                    <input type = "number" value = "0" min = "0" class = "input" id = "children" required>
+
+                </div>
+                <!-- Infant Amount -->
+                <div class = "personsAmountInput">
+
+                    <h2>Infants:</h2>
+                    <input type = "number" value = "0" min = "0" class = "input" id = "infants" required>
+
+                </div>
+
+            </div>
+
+            <div id = "searchAirline">SEARCH!</div>
+
+        </div>
+
+        <!-- ********GOOGLE MAPS AND NOTES ROW******** -->
+        <div class = "row">
+            <div class = "title">
+                <h1>NOTES<span class = "price"></span></h1>
+                <textarea onkeyup = "autoGrow(this)" class = "notesTextbox" id = "notes" placeholder = "Your Plans and Ideas Go Here!">
+
+                </textarea>
+            </div>
+        </div>
+
+        <!-- ********IMAGES ROW******** -->
+        <div class = "row">
+
+        </div>
+
+        <!-- ********FLIGHT INFO ROW******** -->
+        <div class = "row">
+
+            <!-- Price -->
+            <div class = "title">
+                <h1>INVESTMENT<span class = "price" id = "price"></span></h1>
+            </div>
+
+            <!-- OUTBOUND FLIGHTS -->
+            <div class = "outboundContainer">
+
+                <div class = "overallOutboundContainer">
+
+                    <!-- Outbound Label Container -->
+                    <div class = "outboundLabel">
+
+                        <div class = "outbound">
+                            <h2>OUTBOUND</h2>
+                        </div>
+                
+                    </div>
+
+                    <!-- Container for Date and Time -->
+                    <div class = "dateTimeContainer">
+
+                        <div class = "overallDate">
+                            <h2>DATE</h2>
+                            <span class = "flightInput" id = "outboundInitialDate"></span> <br>
+                            <span class = "flightInput" id = "outboundFinalDate"></span>
+                        </div>
+
+                        <div class = "overallTime">
+                            <h2>TIME</h2>
+                            <span class = "flightInput" id = "outboundTime"></span>
+                        </div>
+
+                    </div>
+
+                    <!-- Stops Container -->
+                    <div class = "stopsContainer">
+
+                        <div class = "outboundStops">
+                            <h2>STOPS: <span class = "flightInput" id = "outboundStops"></span></h2>
+                        </div>
+
+                    </div>
+                
+                </div>
+
+            </div>
+
+            <!-- INBOUND FLIGHTS -->
+            <div class = "inboundContainer">
+
+                <div class = "overallInboundContainer">
+
+                    <!-- Inbound Label Container -->
+                    <div class = "inboundLabel">
+
+                        <div class = "inbound">
+                            <h2>INBOUND</h2>
+                        </div>
+                    
+                    </div>
+
+                    <!-- Container for Date and Time -->
+                    <div class = "dateTimeContainer">
+
+                        <div class = "overallDate">
+                            <h2>DATE</h2>
+                            <span class = "flightInput" id = "inboundInitialDate"></span> <br>
+                            <span class = "flightInput" id = "inboundFinalDate"></span>
+                        </div>
+
+                        <div class = "overallTime">
+                            <h2>TIME</h2>
+                            <span class = "flightInput" id = "inboundTime"></span>
+                        </div>
+
+                    </div>
+
+                    <!-- Stops Container -->
+                    <div class = "stopsContainer">
+
+                        <div class = "inboundStops">
+                            <h2>STOPS: <span class = "flightInput" id = "inboundStops"></span></h2>
+                        </div>
+
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- jquery links -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+    <!-- javascript file link -->
+    <script src="./assets/js/flightInfo.js"></script>
+</body>
+</html>
