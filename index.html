@@ -14,6 +14,7 @@
         crossorigin="anonymous"> -->
     <!-- css file link -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <title>Travel Log | Log in</title>
 </head>
 
@@ -23,30 +24,14 @@
         <header>
             <img src="./assets/images/TraveLogo.png">
         </header>
-        <form>
-            <h1 id="username-lable" class="form-lable">
-                User Name
-            </h1>
-            <input id="userName" type="username" class="formInput">
+      
             
-            <h1 id="password-lable" class="form-lable">
-                Password
-            </h1>
-            <input id="userPassword" type="password" class="formInput">
+            <div class="container">
+                    <button type="button" id="signIn" class="btn btn-primary"><i class="fa fa-google-plus"></i>Sign in with Google
+                    </button>
+            </div>
             
-            <h1 id="email-lable" class="form-lable">
-                Email
-            </h1>
-            <input id="userEmail" type="email" class="formInput">
-            
-            <div class="container"></div>
-            <button class="button">
-                Sign Up Today!
-            </button>
-            <button type="submit" id="login-btn" class="button">
-                Login
-            </button>
-        </form>
+       
     </div>
  
     <!-- jquery links -->
@@ -58,7 +43,8 @@
         crossorigin="anonymous"></script> 
 
     <!-- javascript file link -->
-    <script src="./assets/js/flightInfo.js"></script>
+
+    <script src="assets/js/trav.js"></script>
 </body>
 
 </html>
