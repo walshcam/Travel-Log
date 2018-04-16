@@ -66,21 +66,29 @@
                 <div id="map"></div>
                  <div>
                      <br><br><br><br><br> <br><br><br><br><br> <br><br><br><br><br>
-                   <input id="address" type="textbox" value="Your vacation log">
-                   <input type="button" value="add any location" onclick="codeAddress()">
+
+                     <form id="travelinput" role="form">
+                            <h2>Log a Past Trip:</h2>
+                        <div class="form-group-row">
+                            <label for="name-input" id="inputLocation">Location:</label>
+                            <input class="form-control" id="locationInput" type="text">
+                        </div>
+                        <div class="form-group-row">
+                            <label for="caption-input" id="inputCaption">Caption:</label>
+                            <input class="form-control" type="text" id="imageCaption" placeholder="Write a caption">
+                        </div>
+                        <br>
+                        <div class="upload" id="uploadpics">
+                            <progress value="0" max="100" id="uploader">0%</progress>
+                            <input type="file" size="60" value="upload" id="filebutton" />
+                        </div>
+                        <div id="uploadComplete">
+                        </div>
+    
+                   <!-- <input id="address" type="textbox" value="Your vacation log">
+                   <input type="button" value="add any location" onclick="codeAddress()"> -->
                  </div>
                 
-            <!-- User Notes --> 
-
-            <div id="note-container">
-                <form>
-                    <div class="form-group">
-                        <label for="user-notes">Notes</label>
-                        <textarea class="form-control" id="user-notes" rows="3"></textarea>
-                    </div>
-                </form>
-            </div>
-
             <!-- User Images -->
 
             <div id="img-container">

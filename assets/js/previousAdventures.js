@@ -19,7 +19,7 @@ function querydatabase() {
         var postObject = snapshot.val();
         console.log(postObject);
         var keys = Object.keys(postObject);
-        var currentRow;
+        // var currentRow;
         // var Username = $("#name-input").val();
         var newArray=[];
         
@@ -43,15 +43,60 @@ function querydatabase() {
            newDiv.append(newImg);
            newDiv.append(newCaption);
            $("#gallery").append(newDiv);
-
-
-
+        //    call (or put) map function here?
 
             };
         });   
     };     
 
+    // Clears input fields on focus
+    $("#locationInput").focus(function(){
+        uploader.value = 0;
+        document.getElementById("newp").style.visibility = "hidden"});
 
+    // Pushes file and metadata to database
+    $("#filebutton").on("change", function(event) {
+        var file = event.target.files[0];
+        var filename = file.name
+        var storageref = firebase.storage().ref(filename);
+        var uploadTask = storageref.put(file);
+       
+        uploadTask.on('state_changed', 
+            function progress(snapshot) {
+                var percentage = (snapshot.bytesTransferred / 
+                snapshot.totalBytes) * 100;
+                uploader.value = percentage;
+                },
+            function error(err) {
+                console.log("error");
+                },
+            function complete() {
+                // Creates a 'Posts' key to store metadata in database
+                var postKey = firebase.database().ref('Posts/').push().key;
+                var downloadURL = uploadTask.snapshot.downloadURL;
+                var updates = {};
+                var postData = {
+                    url: downloadURL,
+                    location: $("#locationInput").val(),
+                    caption: $("#imageCaption").val(),
+                    Username: user.uid
+                    };
+                updates['/Posts/' +postKey] = postData;
+                firebase.database().ref().update(updates);
+                console.log(downloadURL);
+                querydatabase();
+
+                var newp = document.createElement("p");
+                $(newp).addClass("uploadComp");
+                $(newp).attr('id', 'newp');
+                $(newp).html("Upload Complete");
+                $("#uploadComplete").append(newp);
+                $("#locationInput").val('');
+                $("#imageCaption").val('');
+
+                }
+            );
+        });
 
 
 
