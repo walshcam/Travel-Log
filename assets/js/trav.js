@@ -15,11 +15,11 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var provider = new firebase.auth.GoogleAuthProvider();
 var user;
-provider.setCustomParameters({
-    prompt: 'select_account'
- });
+// provider.setCustomParameters({
+//     prompt: 'select_account'
+//  });
 
-$(document).ready(function() {
+// $(document).ready(function() {
   
 
 function signIn() {
@@ -30,6 +30,14 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
     user = result.user;
     // showWelcomeContainer();
    
+// $("#signIn").on("click", function() {
+
+//     firebase.auth().signInWithPopup(provider).then(function(result) {
+//         // This gives you a Google Access Token. You can use it to access the Google API.
+//         var token = result.credential.accessToken;
+//         // The signed-in user info.
+//         user = result.user;
+// })
     
     // ...
   }).catch(function(error) {
@@ -43,7 +51,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
     // ...
   });
 };
-});
+// });
 
 
 
