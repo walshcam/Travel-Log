@@ -11,6 +11,9 @@ var database = firebase.database();
 var provider = new firebase.auth.GoogleAuthProvider();
 var user;
 
+$(document).ready(function() {
+    querydatabase();
+});
 function querydatabase() {
     firebase.database().ref('/Posts/').once('value').then(function(snapshot) {
         var postObject = snapshot.val();
@@ -45,7 +48,8 @@ function querydatabase() {
 
 
             };
-        });        
+        });   
+    };     
 
 
 
