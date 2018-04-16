@@ -58,6 +58,9 @@ firebase.auth().onAuthStateChanged(user => {
         window.location = 'assets/html/previousAdventures.html';
     }
 });
+
+
+
 // });
 
 
