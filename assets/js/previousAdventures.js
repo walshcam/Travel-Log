@@ -50,9 +50,9 @@ function querydatabase() {
     };     
 
     // Clears input fields on focus
-    $("#locationInput").focus(function(){
-        uploader.value = 0;
-        document.getElementById("newp").style.visibility = "hidden"});
+    // $("#locationInput").focus(function(){
+    //     uploader.value = 0;
+    //     document.getElementById("newp").style.visibility = "hidden"});
 
     // Pushes file and metadata to database
     $("#filebutton").on("change", function(event) {
@@ -60,6 +60,7 @@ function querydatabase() {
         var filename = file.name
         var storageref = firebase.storage().ref(filename);
         var uploadTask = storageref.put(file);
+        user = result.user;
        
         uploadTask.on('state_changed', 
             function progress(snapshot) {
@@ -86,13 +87,13 @@ function querydatabase() {
                 console.log(downloadURL);
                 querydatabase();
 
-                var newp = document.createElement("p");
-                $(newp).addClass("uploadComp");
-                $(newp).attr('id', 'newp');
-                $(newp).html("Upload Complete");
-                $("#uploadComplete").append(newp);
-                $("#locationInput").val('');
-                $("#imageCaption").val('');
+                // var newp = document.createElement("p");
+                // $(newp).addClass("uploadComp");
+                // $(newp).attr('id', 'newp');
+                // $(newp).html("Upload Complete");
+                // $("#uploadComplete").append(newp);
+                // $("#locationInput").val('');
+                // $("#imageCaption").val('');
 
                 }
             );
