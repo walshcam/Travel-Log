@@ -37,6 +37,7 @@ $("#signIn").on("click", function() {
         var token = result.credential.accessToken;
         // The signed-in user info.
         user = result.user;
+
 // })
     
     // ...
@@ -50,6 +51,12 @@ $("#signIn").on("click", function() {
     var credential = error.credential;
     // ...
   });
+});
+
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        window.location = 'assets/html/previousAdventures.html';
+    }
 });
 // });
 
