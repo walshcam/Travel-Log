@@ -13,7 +13,9 @@
         crossorigin="anonymous">
     <!-- css file link -->
     <link rel="stylesheet" href="./../css/previousAdventures.css">
+
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
     <title>Travel Log | Main Menu</title>
 </head>
 
@@ -60,11 +62,15 @@
 
             <!-- map -->
 
-            <div id="map-container">
-                <img id="map" src="../images/map.PNG" alt="">
-            </div>
-
-            <!-- User Notes -->
+                
+                <div id="map"></div>
+                 <div>
+                     <br><br><br><br><br> <br><br><br><br><br> <br><br><br><br><br>
+                   <input id="address" type="textbox" value="Your vacation log">
+                   <input type="button" value="add any location" onclick="codeAddress()">
+                 </div>
+                
+            <!-- User Notes --> 
 
             <div id="note-container">
                 <form>
@@ -119,9 +125,12 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-
+      <script src="../js/georecorder.js"></script> 
     <!-- javascript file link -->
     <script src="../js/previousAdventures.js"></script>
+    <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEIwSV8mz7FhFBG8WpCbLO0WTwTBxpj0Q&callback=initMap">
+</script>
 </body>
 
 </html>

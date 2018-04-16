@@ -285,10 +285,12 @@ div.hero {
     grid-column: 1 / -1;
     /* grid-row:  */
 }
+
 #img-container {
     grid-column: 2 / 3;
     /* grid-row:  */
 }
+
 #note-container {
     grid-column: 2 / 3;
     /* grid-row:  */
@@ -307,11 +309,32 @@ div.hero {
 /* map styles */
 
 #map {
-    width: 100%;
+    width: 25rem;
+    height: 20rem;
     box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
 
     border: 5px solid #666;
     
+}
+
+@media only screen and (min-width: 766px) {
+  #map {
+    width: 73.7rem;
+  }
+}
+
+.map-responsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+.map-responsive iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
 }
 
 /* User Img styles */
