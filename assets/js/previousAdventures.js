@@ -77,11 +77,12 @@ function querydatabase() {
                 var postKey = firebase.database().ref('Posts/').push().key;
                 var downloadURL = uploadTask.snapshot.downloadURL;
                 var updates = {};
+                var token = firebase.auth().currentUser.uid;
                 var postData = {
                     url: downloadURL,
                     location: $("#locationInput").val(),
                     caption: $("#imageCaption").val(),
-                    Username: user.uid
+                    Username: token
                     };
                 updates['/Posts/' +postKey] = postData;
                 firebase.database().ref().update(updates);
