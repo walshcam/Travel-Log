@@ -39,7 +39,7 @@ function querydatabase() {
            newImg.attr("src", newArray[j].url);
            let newCaption = $("<div>");
            newCaption.addClass("desc");
-           newCpation.text(newArray[j].caption);
+           newCaption.text(newArray[j].caption);
            newDiv.append(newImg);
            newDiv.append(newCaption);
            $("#gallery").append(newDiv);
