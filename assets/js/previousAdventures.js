@@ -61,7 +61,7 @@ function querydatabase() {
         var filename = file.name
         var storageref = firebase.storage().ref(filename);
         var uploadTask = storageref.put(file);
-        user = result.user;
+        
        
         uploadTask.on('state_changed', 
             function progress(snapshot) {
