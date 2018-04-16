@@ -58,6 +58,10 @@ div.hero {
     line-height: 1;
     margin-bottom: 10px;
   }
+
+  .logo:hover {
+    text-decoration: none;
+  }
   @media only screen and (max-width: 766px) {
     .logo {
       float: none;
