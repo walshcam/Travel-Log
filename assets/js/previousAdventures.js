@@ -11,15 +11,17 @@ var database = firebase.database();
 var provider = new firebase.auth.GoogleAuthProvider();
 var user;
 
+
 $(document).ready(function() {
     querydatabase();
+    codeAddress();
 });
 function querydatabase() {
     firebase.database().ref('/Posts/').once('value').then(function(snapshot) {
         var postObject = snapshot.val();
         console.log(postObject);
         var keys = Object.keys(postObject);
-        var currentRow;
+        // var currentRow;
         // var Username = $("#name-input").val();
         var newArray=[];
         
@@ -43,13 +45,116 @@ function querydatabase() {
            newDiv.append(newImg);
            newDiv.append(newCaption);
            $("#gallery").append(newDiv);
-
-
-
+        //    call (or put) map function here?
 
             };
         });   
     };     
+
+    // Clears input fields on focus
+    // $("#locationInput").focus(function(){
+    //     uploader.value = 0;
+    //     document.getElementById("newp").style.visibility = "hidden"});
+
+    // Pushes file and metadata to database
+    $("#filebutton").on("change", function(event) {
+        var file = event.target.files[0];
+        var filename = file.name
+        var storageref = firebase.storage().ref(filename);
+        var uploadTask = storageref.put(file);
+        
+       
+        uploadTask.on('state_changed', 
+            function progress(snapshot) {
+                var percentage = (snapshot.bytesTransferred / 
+                snapshot.totalBytes) * 100;
+                uploader.value = percentage;
+                },
+            function error(err) {
+                console.log("error");
+                },
+            function complete() {
+                // Creates a 'Posts' key to store metadata in database
+                var postKey = firebase.database().ref('Posts/').push().key;
+                var downloadURL = uploadTask.snapshot.downloadURL;
+                var updates = {};
+                var token = firebase.auth().currentUser.uid;
+                var postData = {
+                    url: downloadURL,
+                    location: $("#locationInput").val(),
+                    caption: $("#imageCaption").val(),
+                    Username: token
+                    };
+                updates['/Posts/' +postKey] = postData;
+                firebase.database().ref().update(updates);
+                console.log(downloadURL);
+                querydatabase();
+                codeAddress();
+
+                // var newp = document.createElement("p");
+                // $(newp).addClass("uploadComp");
+                // $(newp).attr('id', 'newp');
+                // $(newp).html("Upload Complete");
+                // $("#uploadComplete").append(newp);
+                // $("#locationInput").val('');
+                // $("#imageCaption").val('');
+
+                }
+            );
+        });
+
+        var geocoder;
+        var map;
+        function initMap() {
+          geocoder = new google.maps.Geocoder();
+          var latlng = new google.maps.LatLng(-34.397, 150.644);
+          var mapOptions = {
+            zoom: 9,
+            center: latlng
+          }
+          map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        };
+        
+        
+        function codeAddress() {
+          firebase.database().ref('/Posts/').once('value').then(function(snapshot) {
+            var postObject = snapshot.val();
+            console.log(postObject);
+            var keys = Object.keys(postObject);
+            // var currentRow;
+            // var Username = $("#name-input").val();
+            var mapArray=[];
+        
+            for (var i=0; i<keys.length; i++) {
+              var token = firebase.auth().currentUser.uid;
+              var currentObject = postObject[keys[i]];
+              if (token==currentObject.Username) {
+                  mapArray.push(currentObject)
+              }
+              };
+              console.log(mapArray);
+              for (j=0; j<mapArray.length; j++) {
+          var address = mapArray[j].location;
+          geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == 'OK') {
+              map.setCenter(results[0].geometry.location);
+              var marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location
+                  
+              });
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+          });
+        };
+          });
+        };
+        
+
+
+
+
 
 
 
