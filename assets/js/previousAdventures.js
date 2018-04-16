@@ -14,6 +14,7 @@ var user;
 
 $(document).ready(function() {
     querydatabase();
+    codeAddress();
 });
 function querydatabase() {
     firebase.database().ref('/Posts/').once('value').then(function(snapshot) {
@@ -88,6 +89,7 @@ function querydatabase() {
                 firebase.database().ref().update(updates);
                 console.log(downloadURL);
                 querydatabase();
+                codeAddress();
 
                 // var newp = document.createElement("p");
                 // $(newp).addClass("uploadComp");
