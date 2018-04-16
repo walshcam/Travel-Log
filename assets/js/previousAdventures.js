@@ -11,6 +11,7 @@ var database = firebase.database();
 var provider = new firebase.auth.GoogleAuthProvider();
 var user;
 
+
 $(document).ready(function() {
     querydatabase();
 });
