@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,26 +19,60 @@
 
 
 <body>
+    <!-- Nav bar -->
+
+    <header class="main_h">
+        <div class="row-nav">
+            <a class="logo" href="#">TL</a>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href=".sec01">Section 01</a>
+                    </li>
+                    <li>
+                        <a href=".sec02">Section 02</a>
+                    </li>
+                    <li>
+                        <a href=".sec03">Section 03</a>
+                    </li>
+                    <li>
+                        <a href=".sec04">Section 04</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- banner -->
+
 
     <!-- Overall container of the body -->
-    <div class = "container">
-        
+    <div class="container">
+        <div class="banner">
+            <img src="../images/TraveLogo.png">
+
+        </div>
         <!-- ********AIRLINE INFO ROW******** -->
-        <div class = "row">
+        <div class="row">
 
             <!-- Roundtrip / Oneway Button -->
-            <div class = "airlineButton">
+            <div class="airlineButton">
 
-                <div class = "blueSelector" id = "roundTripSelector">
+                <div class="blueSelector" id="roundTripSelector">
 
                 </div>
-                
-                <ul class = "buttonElement">
 
-                    <li class = "leftButton" id = "roundTrip">
+                <ul class="buttonElement">
+
+                    <li class="leftButton topbtn" id="roundTrip">
                         Roundtrip
                     </li>
-                    <li class = "rightButton" id = "oneWay">
+                    <li class="rightButton topbtn" id="oneWay">
                         OneWay
                     </li>
 
@@ -46,204 +81,197 @@
             </div>
 
             <!-- NonStop / Layovers -->
-            <div class = "airlineButton">
-                
-                <ul class = "buttonElement">
+            <div class="airlineButton">
 
-                    <li class = "leftButton" id = "nonStop">
+                <ul class="buttonElement">
+
+                    <li class="leftButton topbtn" id="nonStop">
                         NonStop
                     </li>
-                    <li class = "rightButton" id = "layovers">
+                    <li class="rightButton topbtn" id="layovers">
                         Layovers
                     </li>
 
                 </ul>
-                
-                <div class = "blueSelector" id = "nonStopSelector">
+
+                <div class="blueSelector" id="nonStopSelector">
 
                 </div>
 
             </div>
 
             <!-- Flying From Info Request -->
-            <div class = "airlineTextboxLarge">
+            <div class="airlineTextboxLarge">
 
                 <h2>Flying From:</h2>
-                <input type = "text" class = "textboxLarge" id = "origin" placeholder = "BOS" required>
+                <input type="text" class="textboxLarge" id="origin" placeholder="BOS" required>
 
             </div>
 
             <!-- Flying To Info Request -->
-            <div class = "airlineTextboxLarge">
+            <div class="airlineTextboxLarge">
 
                 <h2>Flying To:</h2>
-                <input type = "text" class = "textboxLarge" id = "destination" placeholder = "LAX" required>
+                <input type="text" class="textboxLarge" id="destination" placeholder="LAX" required>
 
             </div>
 
-            <div class = "bottomInput">
+            <div class="bottomInput">
 
                 <!-- Outbound Date Input -->
-                <div class = "innerDateInput clearfix">
+                <div class="innerDateInput clearfix">
 
-                
-                    <div class = "dateInput">
+
+                    <div class="dateInput">
 
                         <h2>Depart Date:</h2>
-                        <input type = "text" class = "input" id = "departDate" placeholder = "YYYY-MM-DD" required>
+                        <input type="text" class="input" id="departDate" placeholder="YYYY-MM-DD" required>
 
                     </div>
 
                 </div>
                 <!-- Inbound Date Input -->
-                <div class = "innerDateInput" id = "hideReturnDate">
+                <div class="innerDateInput" id="hideReturnDate">
 
-                    <div class = "dateInput">
+                    <div class="dateInput">
 
                         <h2>Return Date:</h2>
-                        <input type = "text" class = "input" id = "returnDate" placeholder = "YYYY-MM-DD">
+                        <input type="text" class="input" id="returnDate" placeholder="YYYY-MM-DD">
 
                     </div>
 
                 </div>
-            
+
             </div>
 
-            <div class = "bottomInput clearfix">
+            <div class="bottomInput clearfix">
 
                 <!-- Adults Amount -->
-                <div class = "personsAmountInput">
+                <div class="personsAmountInput">
 
                     <h2>Adults:</h2>
-                    <input type = "number" value = "1" min = "0" class = "input" id = "adults" required>
+                    <input type="number" value="1" min="0" class="input" id="adults" required>
 
                 </div>
                 <!-- Children Amount -->
-                <div class = "personsAmountInput">
+                <div class="personsAmountInput">
 
                     <h2>Children:</h2>
-                    <input type = "number" value = "0" min = "0" class = "input" id = "children" required>
+                    <input type="number" value="0" min="0" class="input" id="children" required>
 
                 </div>
                 <!-- Infant Amount -->
-                <div class = "personsAmountInput">
+                <div class="personsAmountInput">
 
                     <h2>Infants:</h2>
-                    <input type = "number" value = "0" min = "0" class = "input" id = "infants" required>
+                    <input type="number" value="0" min="0" class="input" id="infants" required>
 
                 </div>
 
             </div>
 
-            <div id = "searchAirline">SEARCH!</div>
-
-        </div>
-
-        <!-- ********GOOGLE MAPS AND NOTES ROW******** -->
-        <div class = "row">
-            <div class = "title">
-                <h1>NOTES<span class = "price"></span></h1>
-                <textarea onkeyup = "autoGrow(this)" class = "notesTextbox" id = "notes" placeholder = "Your Plans and Ideas Go Here!">
-
-                </textarea>
-            </div>
-        </div>
-
-        <!-- ********IMAGES ROW******** -->
-        <div class = "row">
+            <div id="searchAirline">SEARCH!</div>
 
         </div>
 
         <!-- ********FLIGHT INFO ROW******** -->
-        <div class = "row">
+        <div class="row">
 
             <!-- Price -->
-            <div class = "title">
-                <h1>INVESTMENT<span class = "price" id = "price"></span></h1>
+            <div class="title">
+                <h1>INVESTMENT
+                    <span class="price" id="price"></span>
+                </h1>
             </div>
 
             <!-- OUTBOUND FLIGHTS -->
-            <div class = "outboundContainer">
+            <div class="outboundContainer">
 
-                <div class = "overallOutboundContainer">
+                <div class="overallOutboundContainer">
 
                     <!-- Outbound Label Container -->
-                    <div class = "outboundLabel">
+                    <div class="outboundLabel">
 
-                        <div class = "outbound">
+                        <div class="outbound">
                             <h2>OUTBOUND</h2>
                         </div>
-                
+
                     </div>
 
                     <!-- Container for Date and Time -->
-                    <div class = "dateTimeContainer">
+                    <div class="dateTimeContainer">
 
-                        <div class = "overallDate">
+                        <div class="overallDate">
                             <h2>DATE</h2>
-                            <span class = "flightInput" id = "outboundInitialDate"></span> <br>
-                            <span class = "flightInput" id = "outboundFinalDate"></span>
+                            <span class="flightInput" id="outboundInitialDate"></span>
+                            <br>
+                            <span class="flightInput" id="outboundFinalDate"></span>
                         </div>
 
-                        <div class = "overallTime">
+                        <div class="overallTime">
                             <h2>TIME</h2>
-                            <span class = "flightInput" id = "outboundTime"></span>
+                            <span class="flightInput" id="outboundTime"></span>
                         </div>
 
                     </div>
 
                     <!-- Stops Container -->
-                    <div class = "stopsContainer">
+                    <div class="stopsContainer">
 
-                        <div class = "outboundStops">
-                            <h2>STOPS: <span class = "flightInput" id = "outboundStops"></span></h2>
+                        <div class="outboundStops">
+                            <h2>STOPS:
+                                <span class="flightInput" id="outboundStops"></span>
+                            </h2>
                         </div>
 
                     </div>
-                
+
                 </div>
 
             </div>
 
             <!-- INBOUND FLIGHTS -->
-            <div class = "inboundContainer">
+            <div class="inboundContainer">
 
-                <div class = "overallInboundContainer">
+                <div class="overallInboundContainer">
 
                     <!-- Inbound Label Container -->
-                    <div class = "inboundLabel">
+                    <div class="inboundLabel">
 
-                        <div class = "inbound">
+                        <div class="inbound">
                             <h2>INBOUND</h2>
                         </div>
-                    
+
                     </div>
 
                     <!-- Container for Date and Time -->
-                    <div class = "dateTimeContainer">
+                    <div class="dateTimeContainer">
 
-                        <div class = "overallDate">
+                        <div class="overallDate">
                             <h2>DATE</h2>
-                            <span class = "flightInput" id = "inboundInitialDate"></span> <br>
-                            <span class = "flightInput" id = "inboundFinalDate"></span>
+                            <span class="flightInput" id="inboundInitialDate"></span>
+                            <br>
+                            <span class="flightInput" id="inboundFinalDate"></span>
                         </div>
 
-                        <div class = "overallTime">
+                        <div class="overallTime">
                             <h2>TIME</h2>
-                            <span class = "flightInput" id = "inboundTime"></span>
+                            <span class="flightInput" id="inboundTime"></span>
                         </div>
 
                     </div>
 
                     <!-- Stops Container -->
-                    <div class = "stopsContainer">
+                    <div class="stopsContainer">
 
-                        <div class = "inboundStops">
-                            <h2>STOPS: <span class = "flightInput" id = "inboundStops"></span></h2>
+                        <div class="inboundStops">
+                            <h2>STOPS:
+                                <span class="flightInput" id="inboundStops"></span>
+                            </h2>
                         </div>
 
                     </div>
-                
+
                 </div>
 
             </div>
@@ -263,4 +291,5 @@
     <!-- javascript file link -->
     <script src="../js/flightInfo.js"></script>
 </body>
+
 </html>
