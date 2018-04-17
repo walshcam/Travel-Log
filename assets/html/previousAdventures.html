@@ -7,6 +7,7 @@
     <!-- reset css file link -->
     <link rel="stylesheet" href="./../css/reset.css">
     <!-- link to font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Amaranth|Lato" rel="stylesheet">
     <!-- bootsrap CDN link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
@@ -62,36 +63,50 @@
 
             <!-- map -->
 
-                
-                <div id="map"></div>
-                 <div>
-                     <br><br><br><br><br> <br><br><br><br><br> <br><br><br><br><br>
-                     <div class = "text-center">
-                        <button onclick = "window.location.href = 'futureAdventuresPage.html'" id = "future" class = "futureButton btn btn-primary">Click Here To Start Your Next Adventure</button>
-                     </div>
 
-                     <form id="travelinput" role="form">
-                            <h2>Log a Past Trip:</h2>
-                        <div class="form-group-row">
-                            <label for="name-input" id="inputLocation">Location:</label>
-                            <input class="form-control" id="locationInput" type="text">
-                        </div>
-                        <div class="form-group-row">
-                            <label for="caption-input" id="inputCaption">Caption:</label>
-                            <input class="form-control" type="text" id="imageCaption" placeholder="Write a caption">
-                        </div>
-                        <br>
-                        <div class="upload" id="uploadpics">
-                            <progress value="0" max="100" id="uploader">0%</progress>
-                            <input type="file" size="60" value="upload" id="filebutton" />
-                        </div>
-                        <div id="uploadComplete">
-                        </div>
-                    </form>
-                   <!-- <input id="address" type="textbox" value="Your vacation log">
+            <div id="map"></div>
+            <div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="text-center">
+                    <button onclick="window.location.href = 'futureAdventuresPage.html'" id="future" class="futureButton btn btn-primary">Click Here To Start Your Next Adventure</button>
+                </div>
+
+                <form id="travelinput" role="form">
+                    <h2>Log a Past Trip:</h2>
+                    <div class="form-group-row">
+                        <label for="name-input" id="inputLocation">Location:</label>
+                        <input class="form-control" id="locationInput" type="text">
+                    </div>
+                    <div class="form-group-row">
+                        <label for="caption-input" id="inputCaption">Caption:</label>
+                        <input class="form-control" type="text" id="imageCaption" placeholder="Write a caption">
+                    </div>
+                    <br>
+                    <div class="upload" id="uploadpics">
+                        <progress value="0" max="100" id="uploader">0%</progress>
+                        <input type="file" size="60" value="upload" id="filebutton" />
+                    </div>
+                    <div id="uploadComplete">
+                    </div>
+                </form>
+                <!-- <input id="address" type="textbox" value="Your vacation log">
                    <input type="button" value="add any location" onclick="codeAddress()"> -->
-                 </div>
-                
+            </div>
+
             <!-- User Images -->
 
             <div id="img-container">
@@ -122,13 +137,38 @@
                     </div> -->
                 </div>
             </div>
-            <footer id="main-footer">The footer</footer>
+            <footer id="main-footer">
+                <div class="person">
+                    <a href="#">
+                        <h1>Benjamin Vaccaro</h1>
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+                <div class="person">
+                    <a href="#">
+                        <h1>Leopold Luc</h1>
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+                <div class="person">
+                    <a href="#">
+                        <h1>Jaime Halupka</h1>
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+                <div class="person">
+                    <a href="#">
+                        <h1>Cameron Walsh</h1>
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+            </footer>
         </div>
     </div>
 
     <!-- jquery links -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-        crossorigin="anonymous"></script>
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+        crossorigin="anonymous"></script> -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
@@ -136,13 +176,12 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-      <script src="../js/georecorder.js"></script> 
+    <script src="../js/georecorder.js"></script>
     <!-- javascript file link -->
-    
+
     <script src="../js/previousAdventures.js"></script>
-    <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEIwSV8mz7FhFBG8WpCbLO0WTwTBxpj0Q&callback=initMap">
-</script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEIwSV8mz7FhFBG8WpCbLO0WTwTBxpj0Q&callback=initMap">
+    </script>
 </body>
 
 </html>

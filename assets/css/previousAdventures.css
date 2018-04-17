@@ -397,3 +397,33 @@ div.desc {
 		margin: 0;
 	}
 }
+
+/* footer styles */
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+div.person {
+  display: inline-flex;
+}
+
+div.person a {
+  color: #666;
+}
+
+div.person i {
+  padding: 0.25em;
+  font-size: 1rem;
+  display: inline;
+}
+
+div.person h1 {
+  display: inline;
+  font-size: 1rem;
+}
+
