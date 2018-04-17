@@ -4,7 +4,6 @@
 .form-lable,
 .formInput {
     font-family: 'Amaranth', sans-serif;
-    color: white;
 }
 
 body {
@@ -20,8 +19,9 @@ body {
 }
 
 /* form textbox style */
+
 .formInput {
-    background: rgba(0,0,0,0.2); 
+    background: rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
@@ -32,9 +32,9 @@ body {
     padding: 7% 0;
     margin-top: 1em;
     font-size: 1.5rem;
-    color: white;
+    color: #666;
     border-radius: 5rem;
-    border: 0.2em solid white;
+    border: 0.2em solid #666;
     background: rgba(0, 0, 0, 0)
 }
 
@@ -83,16 +83,14 @@ header img {
 }
 
 @media only screen and (min-width: 600px) {
-
     body {
         padding: auto;
         background: url(../images/architecture-bay-blonde-196667.jpg);
         background-size: 1100px;
         background-repeat: no-repeat;
         position: relative;
+        margin-top: 12rem;
     }
-
-
     .container {
         display: inline-block;
         height: 65%;
@@ -103,31 +101,25 @@ header img {
         left: 50%;
         transform: translate(-50%)
     }
-
     .form-lable,
     .formInput {
-    color: black;
+        color: black;
     }
-
     .button {
-        color: white;
-        border: 0.2em solid white;
+        color: #666;
+        border: 0.2em solid #666;
     }
-
     header {
         float: right;
         width: 50%;
     }
-
     .form {
         width: 50%;
     }
 }
 
-
 @media only screen and (min-width: 1100px) {
     body {
         background-size: 100%;
     }
-
 }
