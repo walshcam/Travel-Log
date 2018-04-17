@@ -161,7 +161,6 @@ function querydatabase() {
 
 
 
-
 // Sticky Header
 $(window).scroll(function() {
 
