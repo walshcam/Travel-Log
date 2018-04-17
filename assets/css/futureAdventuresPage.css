@@ -9,6 +9,18 @@ body {
     margin: 2%;
 }
 
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  display: inline-flex;
+  width: 20rem;
+  height: 21rem;
+}
+
 .row {
     width: 100%;
     display: inline-block;
@@ -16,6 +28,160 @@ body {
 
 h2 {
     padding: 14px 0px 7px;
+}
+
+/* main header style  */
+
+
+.main_h {
+  position: fixed;
+  top: 0px;
+  max-height: 70px;
+  z-index: 999;
+  width: 100%;
+  padding-top: 17px;
+  background: none;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+  top: -100px;
+  padding-bottom: 6px;
+  font-family: "Montserrat", sans-serif;
+}
+@media only screen and (max-width: 766px) {
+  .main_h {
+    padding-top: 25px;
+  }
+}
+
+.open-nav {
+  max-height: 400px !important;
+}
+.open-nav .mobile-toggle {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+.sticky {
+  background-color: rgba(255, 255, 255, 0.93);
+  opacity: 1;
+  top: 0px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.logo {
+  width: 50px;
+  font-size: 25px;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  float: left;
+  display: block;
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+@media only screen and (max-width: 766px) {
+  .logo {
+    float: none;
+  }
+}
+
+nav {
+  float: right;
+  width: 60%;
+}
+@media only screen and (max-width: 766px) {
+  nav {
+    width: 100%;
+  }
+}
+nav ul {
+  list-style: none;
+  overflow: hidden;
+  text-align: right;
+  float: right;
+}
+@media only screen and (max-width: 766px) {
+  nav ul {
+    padding-top: 10px;
+    margin-bottom: 22px;
+    float: left;
+    text-align: center;
+    width: 100%;
+  }
+}
+nav ul li {
+  display: inline-block;
+  margin-left: 35px;
+  line-height: 1.5;
+}
+@media only screen and (max-width: 766px) {
+  nav ul li {
+    width: 100%;
+    padding: 7px 0;
+    margin: 0;
+  }
+}
+nav ul a {
+  color: #888888;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 22px;
+  top: 0;
+  width: 30px;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+@media only screen and (max-width: 766px) {
+  .mobile-toggle {
+    display: block;
+  }
+}
+.mobile-toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}
+
+.row-nav {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 2%;
+  justify-content: space-between;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #8f8f8f;
+  background: white;
+  font-family: "Cardo", serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
 }
 
 
@@ -31,7 +197,7 @@ h2 {
     z-index:2;
 }
 
-ul {
+.buttonElement {
     width: 100%;
     text-align: center;
     /* center navigation bar */
@@ -44,7 +210,7 @@ ul {
     margin: 0;
 }
 
-li {
+.topbtn {
     display: inline-block;
     width: 49%;
     padding: 15px 0px;
@@ -60,6 +226,8 @@ li {
     top: 0;
     z-index: 5;
 }
+
+
 
 /* TEXTBOX STYLING */
 
@@ -150,7 +318,7 @@ li {
 
 .price {
     font-weight: inherit;
-    color: white;
+    color: black;
     padding-left: 2%;
 }
 
@@ -164,7 +332,7 @@ li {
 .overallOutboundContainer {
     width: 100%;
     height: 250px;
-    background: rgba(0,0,0,0.4);
+    border: 3px solid rgba(0,0,0,0.4);
     border-radius: 4px;
     position: relative;    
 }
@@ -196,12 +364,12 @@ li {
 
 .outbound,
 .inbound {
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
 .flightInput {
-    color: white;
+    color: black;
     font-size: 14px;
 }
 
