@@ -41,7 +41,7 @@ function querydatabase() {
            newImg.attr("src", newArray[j].url);
            let newCaption = $("<div>");
            newCaption.addClass("desc");
-           newCaption.text(newArray[j].caption);
+           newCaption.text(newArray[j].location + ": " + newArray[j].caption);
            newDiv.append(newImg);
            newDiv.append(newCaption);
            $("#gallery").append(newDiv);
@@ -52,9 +52,9 @@ function querydatabase() {
     };     
 
     // Clears input fields on focus
-    // $("#locationInput").focus(function(){
-    //     uploader.value = 0;
-    //     document.getElementById("newp").style.visibility = "hidden"});
+    $("#locationInput").focus(function(){
+        uploader.value = 0;
+        document.getElementById("newp").style.visibility = "hidden"});
 
     // Pushes file and metadata to database
     $("#filebutton").on("change", function(event) {
@@ -88,6 +88,14 @@ function querydatabase() {
                 updates['/Posts/' +postKey] = postData;
                 firebase.database().ref().update(updates);
                 console.log(downloadURL);
+                var newp = document.createElement("p");
+                $(newp).addClass("uploadComp");
+                $(newp).attr('id', 'newp');
+                $(newp).html("Upload Complete");
+                $("#uploadComplete").append(newp);
+                $("#locationInput").val('');
+                $("#imageCaption").val('');
+                $("#gallery").empty();
                 querydatabase();
                 codeAddress();
 
