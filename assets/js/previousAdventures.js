@@ -21,10 +21,8 @@ function querydatabase() {
         var postObject = snapshot.val();
         console.log(postObject);
         var keys = Object.keys(postObject);
-        // var currentRow;
-        // var Username = $("#name-input").val();
         var newArray=[];
-        
+    // matching user to their photos using token and pushing to new array
         for (var i=0; i<keys.length; i++) {
             var token = firebase.auth().currentUser.uid;
             var currentObject = postObject[keys[i]];
@@ -32,7 +30,7 @@ function querydatabase() {
                 newArray.push(currentObject)
             }
             };
-
+    // appending photos from the new array to the page
                 console.log(newArray);
             for (j=0; j<newArray.length; j++) {
            let newDiv = $("<div>");
@@ -98,6 +96,8 @@ function querydatabase() {
                 $("#gallery").empty();
                 querydatabase();
                 codeAddress();
+
+                
 
                 // var newp = document.createElement("p");
                 // $(newp).addClass("uploadComp");
