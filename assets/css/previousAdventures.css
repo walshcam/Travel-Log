@@ -176,7 +176,7 @@ div.hero {
   
   .hero {
     position: relative;
-    background: url(./../images/pexels-photo-1.jpeg) no-repeat center center fixed;
+    background: url(./../images/architecture-buildings-church-338515.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -315,6 +315,12 @@ div.hero {
 
     border: 5px solid #666;
     
+}
+
+/* Button Style */
+
+.futureButton {
+  font-family: "Montserrat", sans-serif;
 }
 
 @media only screen and (min-width: 766px) {
