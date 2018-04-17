@@ -1,12 +1,3 @@
-.aboutLogo {
-    text-align: center;
-    color: #fff;
-    padding-top: 110px;
-    width: 50%;
-    letter-spacing: 2px;
-    font-family: "Montserrat", sans-serif;
-}
-
-img {
-    align-self: center;
+.container{
+    margin: 2% 7%;
 }
